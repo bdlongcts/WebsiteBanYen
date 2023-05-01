@@ -1,0 +1,67 @@
+﻿@model WebShop.ModelViews.RegisterVM
+
+@{
+    ViewData["Title"] = "DangKyTaiKhoan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main class="main-content">
+    
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Form đăng ký</title>
+        <!-- Nạp các tệp CSS của Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="text-center">Đăng ký</h4>
+                        </div>
+                        <div class="card-body">
+                            <form asp-action="DangKyTaiKhoan">
+                                <div class="form-group">
+                                    <label for="name">Họ và tên:</label>
+                                    <input type="text" asp-for="FullName" class="form-control" placeholder="Họ và tên">
+                                    <span asp-validation-for="FullName" ></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" asp-for="Email" placeholder="Email Address" class="form-control">
+                                    <span asp-validation-for="Email" ></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Số điện thoại:</label>
+                                    <input type="tel" asp-for="Phone" placeholder="Số điện thoại" class="form-control">
+                                    <span asp-validation-for="Phone" ></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Mật khẩu:</label>
+                                    <input type="password" asp-for="Password" placeholder="Mật khẩu" class="form-control">
+                                    <span asp-validation-for="Password"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm_pwd">Nhập lại mật khẩu:</label>
+                                    <input type="password" asp-for="ConfirmPassword" placeholder="Nhập lại mật khẩu" class="form-control">
+                                    <span asp-validation-for="ConfirmPassword" ></span>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Đăng ký</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nạp các tệp JavaScript của Bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </body>
+</html>
+</main>

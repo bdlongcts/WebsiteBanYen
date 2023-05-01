@@ -1,0 +1,51 @@
+﻿@model WebShop.Models.Category
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<form asp-controller="AdminCategories" asp-action="Edit" asp-route-id="@Model.CatId" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="CatId" />
+    <input type="hidden" asp-for="Thumb" />
+
+    <div class="page-header no-gutters has-tab">
+        <div class="d-md-flex m-b-15 align-items-center justify-content-between">
+            <div class="media align-items-center m-b-15">
+            </div>
+            <div class="m-b-15">
+                <button class="btn btn-primary">
+                    <i class="anticon anticon-save"></i>
+                    <span>Lưu</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div class="tab-content m-t-15">
+        <div class="tab-pane fade show active" id="product-edit-basic">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productName">Tên danh mục</label>
+                        <input type="text" class="form-control" asp-for="CatName">
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productStatus">Trạng thái</label>
+                        <select class="custom-select" id="productStatus" name="published">
+                            <option value="true">Đã phát hành</option>
+                            <option value="false">Chưa phát hành</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="ShortDesc">Mô tả</label>
+                        <input type="text" class="form-control" asp-for="Description">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a class="btn btn-primary btn-tone m-r-5" asp-action="Index">Quay lại</a>
+</div>
